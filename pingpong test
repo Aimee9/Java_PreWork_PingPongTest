@@ -1,0 +1,42 @@
+import java.io.Console;
+import java.util.ArrayList;
+
+public class PingPong {
+    public static void main(String[] args) {
+
+        Console myConsole = System.console();
+
+        System.out.println("Let us know your favorite number:");
+        String favoriteNumberString = myConsole.readLine();
+
+        Integer favoriteNumber = Integer.parseInt(favoriteNumberString);
+        ArrayList pingpongArray = new ArrayList();
+        //returnPingPong(favoriteNumber);
+        pingpongArray = returnPingPong(favoriteNumber);
+        //System.out.println(pingpongArray);
+
+        }
+
+    public static ArrayList returnPingPong(Integer favoriteNumber) {
+
+            Console myConsole = System.console();
+
+            //System.out.println("Let us know your favorite number:");
+            //String favoriteNumberString = myConsole.readLine();
+
+            //Integer favoriteNumber = Integer.parseInt(favoriteNumberString);
+
+            ArrayList pingpongArray = new ArrayList(favoriteNumber);
+            for (Integer index = 1; index <= favoriteNumber; index++) {
+                if (index %15 == 0) {pingpongArray.add("pingpong");}
+                else if (index % 5 == 0) { pingpongArray.add("pong");}
+                else if (index %3 == 0 ) { pingpongArray.add("ping");}
+                else {pingpongArray.add(index);}
+            //   System.out.println(pingpongArray(pingpongArray(index)));
+            }
+
+
+            System.out.println(pingpongArray);
+            return pingpongArray;
+        }
+}
